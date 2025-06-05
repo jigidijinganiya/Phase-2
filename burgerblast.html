@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Burger Blast - Menu</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --primary: #ff4081;
+            --text-color: #ffffff;
+            --secondary-text: #aaaaaa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Stall Info */
+        .restaurant-info {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .restaurant-info h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .restaurant-info p {
+            font-size: 1rem;
+            color: var(--secondary-text);
+            margin: 0.3rem 0;
+        }
+
+        .restaurant-info a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .restaurant-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            margin-bottom: 2rem;
+        }
+
+        .menu-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Menu Item */
+        .menu-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 1rem;
+        }
+
+        .menu-item-details {
+            flex: 1;
+        }
+
+        .menu-item-details h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+
+        .menu-item-details p {
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .menu-item-details .price {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-item img {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .restaurant-info h1 {
+                font-size: 1.5rem;
+            }
+
+            .menu-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Stall Info -->
+        <div class="restaurant-info">
+            <h1>Burger Blast</h1>
+            <p>133 Festival Avenue, Main Campus, Mumbai, MH 400001, India</p>
+            <p>Phone: <a href="tel:+919876543215">+91 9876543215</a></p>
+            <p>Email: <a href="mailto:info@burgerblastfest.com">info@burgerblastfest.com</a></p>
+            <p>Operating Hours: 12:00 PM - 10:00 PM (During Vidyut Multi Fest)</p>
+        </div>
+
+        <!-- Menu Section -->
+        <div class="menu-section">
+            <h2>Signature Burgers</h2>
+            <div class="menu-item">
+                <img src="aloo tikki burger.jpeg" alt="McAloo Tikki Burger" />
+                <div class="menu-item-details">
+                    <h3>Spicy Aloo Tikki Burger</h3>
+                    <p>Crispy potato and pea patty with desi spices, topped with fresh onions, tomatoes, and sweet tomato mayo.</p>
+                    <div class="price">₹100</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="paneer burger.jpeg" alt="McSpicy Paneer Burger" />
+                <div class="menu-item-details">
+                    <h3>McSpicy Paneer Burger</h3>
+                    <p>Batter-coated paneer patty with a fiery crunch, paired with crisp lettuce and spicy tandoori mayo.</p>
+                    <div class="price">₹160</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="maharaja.jpeg" alt="Chicken Maharaja Mac" />
+                <div class="menu-item-details">
+                    <h3>Maharaja Chicken Burger</h3>
+                    <p>Double grilled chicken patties with habanero sauce, jalapeños, cheddar cheese, lettuce, and onions.</p>
+                    <div class="price">₹200</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="veg maharaja.png" alt="Veg Maharaja Mac" />
+                <div class="menu-item-details">
+                    <h3>Veg Maharaja Burger</h3>
+                    <p>Double patties of corn, cheese, and veggies, layered with cocktail sauce, lettuce, and tomatoes.</p>
+                    <div class="price">₹180</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="butter paneer.jpeg" alt="Butter Paneer Grilled Burger" />
+                <div class="menu-item-details">
+                    <h3>Butter Paneer Burger</h3>
+                    <p>Grilled paneer patty marinated in rich buttery sauce, served with lettuce and creamy mayo.</p>
+                    <div class="price">₹170</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="spicy chicken.jpeg" alt="McSpicy Chicken Burger" />
+                <div class="menu-item-details">
+                    <h3>Spicy Chicken Burger</h3>
+                    <p>Crispy chicken patty with spicy seasoning, topped with fresh lettuce and eggless mayonnaise.</p>
+                    <div class="price">₹190</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="dosa masala.jpeg" alt="Dosa Masala Burger" />
+                <div class="menu-item-details">
+                    <h3>Dosa Masala Burger</h3>
+                    <p>Spiced potato masala patty inspired by dosa fillings, with tangy chutney and fresh veggies.</p>
+                    <div class="price">₹130</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="chicken kebab burger.jpeg" alt="Chicken Kebab Burger" />
+                <div class="menu-item-details">
+                    <h3>Chicken Kebab Burger</h3>
+                    <p>Succulent chicken kebab patty with habanero sauce, onions, and cilantro mayo on a toasted bun.</p>
+                    <div class="price">₹175</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

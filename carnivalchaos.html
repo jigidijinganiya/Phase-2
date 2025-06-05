@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carnival Chaos - Wild Fun Fest</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #111;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      width: 90%;
+    }
+
+    .event-image {
+      width: 100%;
+      height: auto;
+      max-height: 50vh;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 5px 14px rgba(0,0,0,0.7);
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      color: #ff4180;
+      text-align: center;
+      margin: 1.5rem 0 2rem;
+      font-size: clamp(2rem, 5vw, 2.9rem);
+      font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .event-tag {
+      text-align: center;
+      font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+      color: #ccc;
+      margin-bottom: 2.5rem;
+    }
+
+    .event-tag span {
+      margin: 0 0.5rem;
+      padding: 0.4rem 0.8rem;
+      background-color: #222;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    .price {
+      color: #ff0000;
+      font-weight: bold;
+    }
+
+    .content-wrapper {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .main-content, .sidebar {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .carnival-info {
+      font-size: clamp(1rem, 2.5vw, 1.12rem);
+      line-height: 1.75;
+    }
+
+    h2 {
+      color: #da386e;
+      margin-bottom: 1rem;
+      font-size: clamp(1.4rem, 3.5vw, 1.65rem);
+      border-left: 3px solid #da386e;
+      padding-left: 0.8rem;
+    }
+
+    .timer {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 0.8rem;
+      margin: 1.5rem 0;
+    }
+
+    .timer div {
+      background-color: #333;
+      padding: 0.8rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .timer span {
+      display: block;
+      font-size: clamp(1.4rem, 3vw, 1.7rem);
+      font-weight: bold;
+      color: #00ffff;
+    }
+
+    .event-plan {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      background-color: #222;
+      border-radius: 8px;
+      overflow: hidden;
+      font-size: clamp(0.9rem, 2.2vw, 1rem);
+    }
+
+    .event-plan td {
+      padding: 1rem;
+      border: 1px solid #444;
+      color: #ddd;
+    }
+
+    .section {
+      margin-bottom: 1.5rem;
+    }
+
+    .info-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .info-container > div {
+      text-align: center;
+    }
+
+    .info-container p {
+      margin: 0.5rem 0;
+      font-size: clamp(0.9rem, 2.2vw, 1rem);
+      color: #ddd;
+    }
+
+    .highlight {
+      color: #3c78e7;
+      font-weight: bold;
+    }
+
+    .signup-btn {
+      display: block;
+      width: fit-content;
+      margin: 3rem auto 0;
+      padding: 1rem 2.5rem;
+      background-color: #ff4180;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      transition: background-color 0.3s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .signup-btn:hover {
+      background-color: #da386e;
+      box-shadow: 0 3px 12px rgba(218, 56, 110, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1024px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+
+      .main-content, .sidebar {
+        min-width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem 0.5rem;
+      }
+
+      .event-image {
+        max-height: 40vh;
+      }
+
+      .event-tag span {
+        margin: 0.3rem;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.85rem;
+      }
+
+      .timer {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .event-plan td {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+      }
+
+      .signup-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      .timer div {
+        padding: 0.6rem;
+      }
+
+      .timer span {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="carnivalchaos.jpg" alt="Carnival Chaos Event" class="event-image" />
+
+    <h1>Carnival Chaos</h1>
+    <div class="event-tag">
+      <span>Carnival Game Tournament</span>
+      <span>Solo & Team Challenges</span>
+      <span class="price">₹799 + taxes</span>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="main-content">
+        <div class="section">
+          <h2>Unleash the Fun</h2>
+          <div class="carnival-info">
+            <p>Welcome to <strong>Carnival Chaos</strong>, a wild and colorful carnival game tournament where players compete in classic fairground challenges for ultimate bragging rights!</p>
+            
+            <p>Step right up to test your skills in ring toss, balloon darts, and more, in a vibrant festival atmosphere. Whether you’re aiming solo or rallying a team, Carnival Chaos is your ticket to high-energy fun and epic prizes.</p>
+            
+            <p>Event highlights:</p>
+            <ul>
+              <li>Classic carnival games with competitive twists</li>
+              <li>Festive booths with lights, music, and cotton candy</li>
+              <li>Skill workshops to master game techniques</li>
+              <li>Exclusive carnival tokens and plushie prizes</li>
+              <li>Awards for top scorers and best team spirit</li>
+            </ul>
+            
+            <p>Games: Ring Toss, Balloon Pop, Skee-Ball, Whac-A-Mole. Open to solo players or teams of 2-4, with family-friendly options available.</p>
+            
+            <p>Hosted by <strong>Rosie "Ringleader" Quinn</strong>, a carnival enthusiast and lively MC, who’ll keep the crowd buzzing with gameshow-style energy.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="section">
+          <h2>Chaos Countdown</h2>
+          <div class="timer">
+            <div>
+              <span id="days">00</span>Days
+            </div>
+            <div>
+              <span id="hours">00</span>Hours
+            </div>
+            <div>
+              <span id="minutes">00</span>Minutes
+            </div>
+            <div>
+              <span id="seconds">00</span>Seconds
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Festival Schedule</h2>
+          <table class="event-plan">
+            <tr>
+              <td>Registration Ends</td>
+              <td>10 July 2026</td>
+            </tr>
+            <tr>
+              <td>Opening Festivities</td>
+              <td>15 July, 11:00 AM</td>
+            </tr>
+            <tr>
+              <td>Main Challenges</td>
+              <td>16 July, 12:00 PM</td>
+            </tr>
+            <tr>
+              <td>Grand Finale</td>
+              <td>16 July, 4:00 PM</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="info-container">
+          <div class="venue">
+            <h2>Carnival Grounds</h2>
+            <p>Festive Plaza<br>JoyFest Fields<br><span class="highlight">Streamed on TikTok Live</span></p>
+          </div>
+
+          <div class="contact">
+            <h2>Step Right Up</h2>
+            <p><span class="highlight">Ananya Kapoor</span><br>Event Coordinator<br>carnivalchaos@joyfest.com<br>+91 8765432109</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#" class="signup-btn">Join the Chaos</a>
+  </div>
+
+  <script>
+    const eventDate = new Date("July 16, 2026 12:00:00").getTime();
+
+    const countdown = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+      document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+      document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+      document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("days").innerHTML = "00";
+        document.getElementById("hours").innerHTML = "00";
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chaat Corner - Menu</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --primary: #ff4081;
+            --text-color: #ffffff;
+            --secondary-text: #aaaaaa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Stall Info */
+        .restaurant-info {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .restaurant-info h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .restaurant-info p {
+            font-size: 1rem;
+            color: var(--secondary-text);
+            margin: 0.3rem 0;
+        }
+
+        .restaurant-info a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .restaurant-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            margin-bottom: 2rem;
+        }
+
+        .menu-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Menu Item */
+        .menu-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 1rem;
+        }
+
+        .menu-item-details {
+            flex: 1;
+        }
+
+        .menu-item-details h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+
+        .menu-item-details p {
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .menu-item-details .price {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-item img {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .restaurant-info h1 {
+                font-size: 1.5rem;
+            }
+
+            .menu-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Stall Info -->
+        <div class="restaurant-info">
+            <h1>Chaat Corner</h1>
+            <p>131 Festival Avenue, Main Campus, Mumbai, MH 400001, India</p>
+            <p>Phone: <a href="tel:+919876543214">+91 9876543214</a></p>
+            <p>Email: <a href="mailto:info@chaatcornerfest.com">info@chaatcornerfest.com</a></p>
+            <p>Operating Hours: 12:00 PM - 10:00 PM (During Vidyut Multi Fest)</p>
+        </div>
+
+        <!-- Menu Section -->
+        <div class="menu-section">
+            <h2>Signature Chaat & Street Eats</h2>
+            <div class="menu-item">
+                <img src="samosachaat.jpeg" alt="Samosa Chaat" />
+                <div class="menu-item-details">
+                    <h3>Samosa Chaat</h3>
+                    <p>Golden-fried samosas layered with spiced chickpeas, creamy yogurt, tamarind chutney, and crisp sev.</p>
+                    <div class="price">₹95</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="panipuri.jpeg" alt="Pani Puri" />
+                <div class="menu-item-details">
+                    <h3>Pani Puri</h3>
+                    <p>Crisp puris stuffed with mashed potatoes and chickpeas, served with zesty mint-tamarind water.</p>
+                    <div class="price">₹85</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="bhelpuri.jpeg" alt="Bhel Puri" />
+                <div class="menu-item-details">
+                    <h3>Bhel Puri</h3>
+                    <p>A vibrant mix of puffed rice, diced onions, tomatoes, and chutneys, finished with fine sev.</p>
+                    <div class="price">₹90</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="dahipuri.jpeg" alt="Dahi Sev Puri" />
+                <div class="menu-item-details">
+                    <h3>Dahi Sev Puri</h3>
+                    <p>Flat puris topped with potatoes, onions, chilled yogurt, sweet-spicy chutneys, and crunchy sev.</p>
+                    <div class="price">₹100</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="alootikki.jpeg" alt="Aloo Tikki Chaat" />
+                <div class="menu-item-details">
+                    <h3>Aloo Tikki Chaat</h3>
+                    <p>Crispy potato patties served with spiced chickpeas, yogurt, and a drizzle of tamarind chutney.</p>
+                    <div class="price">₹110</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="pav bhaji.jpeg" alt="Pav Bhaji" />
+                <div class="menu-item-details">
+                    <h3>Pav Bhaji</h3>
+                    <p>Spicy mashed vegetable curry paired with butter-toasted pav bread, garnished with onions.</p>
+                    <div class="price">₹130</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="ragdapattice.jpeg" alt="Ragda Pattice" />
+                <div class="menu-item-details">
+                    <h3>Ragda Pattice</h3>
+                    <p>Golden potato patties topped with white pea curry, chutneys, and fresh coriander.</p>
+                    <div class="price">₹105</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="download.jpeg" alt="Mango Lassi" />
+                <div class="menu-item-details">
+                    <h3>Mango Lassi</h3>
+                    <p>Creamy yogurt blended with ripe mango puree, served chilled for a refreshing finish.</p>
+                    <div class="price">₹100</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

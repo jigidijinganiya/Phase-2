@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mocktail Magic - Menu</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --primary: #ff4081;
+            --text-color: #ffffff;
+            --secondary-text: #aaaaaa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Stall Info */
+        .restaurant-info {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .restaurant-info h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .restaurant-info p {
+            font-size: 1rem;
+            color: var(--secondary-text);
+            margin: 0.3rem 0;
+        }
+
+        .restaurant-info a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .restaurant-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            margin-bottom: 2rem;
+        }
+
+        .menu-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Menu Item */
+        .menu-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 1rem;
+        }
+
+        .menu-item-details {
+            flex: 1;
+        }
+
+        .menu-item-details h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+
+        .menu-item-details p {
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .menu-item-details .price {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-item img {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .restaurant-info h1 {
+                font-size: 1.5rem;
+            }
+
+            .menu-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="restaurant-info">
+            <h1>Mocktail Magic</h1>
+            <p>Stall No. 42, Food Fiesta Zone, Vidyut Multi Fest, Mumbai, MH 400001, India</p>
+            <p>Call us for your fix: <a href="tel:+918877665544">+91 8877665544</a></p>
+            <p>Email your queries to: <a href="mailto:enquiries@mocktailmagicfest.com">enquiries@mocktailmagicfest.com</a></p>
+            <p>Serving happiness from 11:00 AM - 09:00 PM (During the Festivities!)</p>
+        </div>
+
+        <div class="menu-section">
+            <h2>Elixir of Refreshment</h2>
+            <div class="menu-item">
+                <img src="sunsetserenade.jpeg" alt="Sunset Serenade" />
+                <div class="menu-item-details">
+                    <h3>Sunset Serenade</h3>
+                    <p>A vibrant blend of orange, pineapple, and a hint of grenadine, capturing the colors of dusk.</p>
+                    <div class="price">₹90</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="mintmojito.jpeg" alt="Mint Mojito Magic" />
+                <div class="menu-item-details">
+                    <h3>Mint Mojito Magic</h3>
+                    <p>A refreshing concoction of fresh mint, lime, sugar, and soda, a truly magical experience.</p>
+                    <div class="price">₹100</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="berryblissfusion.jpeg" alt="Berry Bliss Fusion" />
+                <div class="menu-item-details">
+                    <h3>Berry Bliss Fusion</h3>
+                    <p>A delightful mix of strawberries, raspberries, and blueberries with a splash of cranberry juice.</p>
+                    <div class="price">₹110</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="cucumbercooler.jpeg" alt="Cucumber Cooler" />
+                <div class="menu-item-details">
+                    <h3>Cucumber Cooler</h3>
+                    <p>A light and hydrating mix of cucumber, lime, and a touch of elderflower syrup.</p>
+                    <div class="price">₹85</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="spicymangotango.jpeg" alt="Spicy Mango Tango" />
+                <div class="menu-item-details">
+                    <h3>Spicy Mango Tango</h3>
+                    <p>A tropical twist of sweet mango with a hint of chili and lime, a dance of flavors.</p>
+                    <div class="price">₹95</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="passionparadise.jpeg" alt="Passion Paradise Punch" />
+                <div class="menu-item-details">
+                    <h3>Passion Paradise Punch</h3>
+                    <p>Exotic passion fruit blended with guava and a splash of soda, a taste of paradise.</p>
+                    <div class="price">₹105</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="lavenderlemonade.jpeg" alt="Lavender Lemonade Lush" />
+                <div class="menu-item-details">
+                    <h3>Lavender Lemonade Lush</h3>
+                    <p>A soothing blend of fresh lemonade infused with aromatic lavender, uniquely refreshing.</p>
+                    <div class="price">₹90</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="watermelonwave.jpeg" alt="Watermelon Wave" />
+                <div class="menu-item-details">
+                    <h3>Watermelon Wave</h3>
+                    <p>A hydrating and sweet blend of fresh watermelon and a hint of mint.</p>
+                    <div class="price">₹80</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="gingergrapefruit.jpeg " alt="Ginger Grapefruit Fizz" />
+                <div class="menu-item-details">
+                    <h3>Ginger Grapefruit Fizz</h3>
+                    <p>A zesty and invigorating mix of grapefruit juice with a spicy ginger kick and soda.</p>
+                    <div class="price">₹95</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="rosemaryraspberry.jpeg" alt="Rosemary Raspberry Refresher" />
+                <div class="menu-item-details">
+                    <h3>Rosemary Raspberry Refresher</h3>
+                    <p>A sophisticated blend of tart raspberries with a subtle herbaceous note of rosemary.</p>
+                    <div class="price">₹100</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Street Eats - Telugu Edition</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --primary: #ff4081;
+            --text-color: #ffffff;
+            --secondary-text: #aaaaaa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Stall Info */
+        .restaurant-info {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .restaurant-info h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .restaurant-info p {
+            font-size: 1rem;
+            color: var(--secondary-text);
+            margin: 0.3rem 0;
+        }
+
+        .restaurant-info a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .restaurant-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            margin-bottom: 2rem;
+        }
+
+        .menu-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Menu Item */
+        .menu-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 1rem;
+        }
+
+        .menu-item-details {
+            flex: 1;
+        }
+
+        .menu-item-details h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+
+        .menu-item-details p {
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .menu-item-details .price {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-item img {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .restaurant-info h1 {
+                font-size: 1.5rem;
+            }
+
+            .menu-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="restaurant-info">
+            <h1>Street Eats - Telugu Edition</h1>
+            <p>Flavors of Andhra & Telangana, Vidyut Multi Fest, Mumbai, MH 400001, India</p>
+            <p>Taste our spice: <a href="tel:+918765432109">+91 8765432109</a></p>
+            <p>Craving Telugu street food? Email us: <a href="mailto:telugueats@vidyutfest.com">telugueats@vidyutfest.com</a></p>
+            <p>Serving the taste of home: 12:30 PM - 10:30 PM (During the Festivities!)</p>
+        </div>
+
+        <div class="menu-section">
+            <h2>Naati Ruchi - Local Flavors</h2>
+            <div class="menu-item">
+                <img src="punugulu.jpeg" alt="Punugulu" />
+                <div class="menu-item-details">
+                    <h3>Punugulu</h3>
+                    <p>Crispy and fluffy deep-fried fritters made from rice and lentil batter, served with peanut chutney.</p>
+                    <div class="price">₹50</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="mirchibajji.jpeg" alt="Mirchi Bajji" />
+                <div class="menu-item-details">
+                    <h3>Mirchi Bajji</h3>
+                    <p>Large green chilies dipped in gram flour batter and deep-fried, a spicy and popular snack.</p>
+                    <div class="price">₹40</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="garelu.jpeg" alt="Garelu (Vada)" />
+                <div class="menu-item-details">
+                    <h3>Garelu (Vada)</h3>
+                    <p>Savory lentil fritters, crispy on the outside and soft inside, often served with sambar and chutney.</p>
+                    <div class="price">₹60</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="tomatobajji.jpeg" alt="Telugu Bhel Puri" />
+                <div class="menu-item-details">
+                    <h3>Tomato Bajji</h3>
+                    <p>Slices of ripe tomato dipped in a spiced gram flour batter and deep-fried until golden brown.</p>
+                    <div class="price">₹45</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="corncob.jpeg" alt="Butta (Corn on the Cob)" />
+                <div class="menu-item-details">
+                    <h3>Butta (Corn on the Cob)</h3>
+                    <p>Grilled or boiled corn on the cob, seasoned with lime, chili powder, and a sprinkle of masala.</p>
+                    <div class="price">₹30</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="pesarattu.jpeg" alt="Pesarattu Upma" />
+                <div class="menu-item-details">
+                    <h3>Pesarattu</h3>
+                    <p>A savory crepe made from ground green gram, served plain or with onion and chili toppings.</p>
+                    <div class="price">₹65</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="onionpakoda.jpeg" alt="Cut Mirchi" />
+                <div class="menu-item-details">
+                    <h3>Onion Pakoda</h3>
+                    <p>Crispy fritters made with thinly sliced onions, gram flour, and spices, a perfect tea-time snack.</p>
+                    <div class="price">₹50</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="idlisambar.jpeg" alt="Idli Sambar" />
+                <div class="menu-item-details">
+                    <h3>Idli Sambar</h3>
+                    <p>Soft and fluffy steamed rice cakes served with a tangy lentil and vegetable stew.</p>
+                    <div class="price">₹75</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="upma.jpeg" alt="Upma" />
+                <div class="menu-item-details">
+                    <h3>Upma</h3>
+                    <p>A savory semolina porridge cooked with vegetables and tempered with spices, a light and filling dish.</p>
+                    <div class="price">₹65</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="samos.jpeg" alt="Samosa" />
+                <div class="menu-item-details">
+                    <h3>Samosa</h3>
+                    <p>Crispy, deep-fried pastry filled with spiced potatoes and peas, a classic savory treat.</p>
+                    <div class="price">₹40</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

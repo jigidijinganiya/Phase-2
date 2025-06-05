@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Icecream Island - Menu</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --primary: #ff4081;
+            --text-color: #ffffff;
+            --secondary-text: #aaaaaa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Stall Info */
+        .restaurant-info {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .restaurant-info h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .restaurant-info p {
+            font-size: 1rem;
+            color: var(--secondary-text);
+            margin: 0.3rem 0;
+        }
+
+        .restaurant-info a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .restaurant-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            margin-bottom: 2rem;
+        }
+
+        .menu-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Menu Item */
+        .menu-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 1rem;
+        }
+
+        .menu-item-details {
+            flex: 1;
+        }
+
+        .menu-item-details h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+
+        .menu-item-details p {
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .menu-item-details .price {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-item img {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .restaurant-info h1 {
+                font-size: 1.5rem;
+            }
+
+            .menu-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Stall Info -->
+        <div class="restaurant-info">
+            <h1>Icecream Island</h1>
+            <p>137 Festival Avenue, Main Campus, Mumbai, MH 400001, India</p>
+            <p>Phone: <a href="tel:+919876543217">+91 9876543217</a></p>
+            <p>Email: <a href="mailto:info@icecreamislandfest.com">info@icecreamislandfest.com</a></p>
+            <p>Operating Hours: 12:00 PM - 10:00 PM (During Vidyut Multi Fest)</p>
+        </div>
+
+        <!-- Menu Section -->
+        <div class="menu-section">
+            <h2>Artisanal Frozen Indulgences</h2>
+            <div class="menu-item">
+                <img src="saffron rose icecream.jpeg" alt="Saffron Rose Ice Cream" />
+                <div class="menu-item-details">
+                    <h3>Saffron Rose Ice Cream</h3>
+                    <p>Velvety ice cream infused with Kashmiri saffron and delicate rose petals, a regal treat.</p>
+                    <div class="price">₹140</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="chocolatetruffle.jpeg" alt="Dark Chocolate Truffle Ice Cream" />
+                <div class="menu-item-details">
+                    <h3>Dark Chocolate Truffle Ice Cream</h3>
+                    <p>Rich dark chocolate ice cream with decadent cocoa truffle swirls, intensely indulgent.</p>
+                    <div class="price">₹150</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="alphonso mango sorbet.jpeg" alt="Alphonso Mango Sorbet" />
+                <div class="menu-item-details">
+                    <h3>Alphonso Mango Sorbet</h3>
+                    <p>Smooth, refreshing sorbet crafted from premium Alphonso mangoes, vibrant and pure.</p>
+                    <div class="price">₹130</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="pistagelato.jpeg" alt="Cardamom Pistachio Gelato" />
+                <div class="menu-item-details">
+                    <h3>Cardamom Pistachio Gelato</h3>
+                    <p>Creamy gelato with aromatic cardamom and roasted pistachios, an elegant Indian fusion.</p>
+                    <div class="price">₹145</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="saltedcaramel.jpeg" alt="Salted Caramel Praline Ice Cream" />
+                <div class="menu-item-details">
+                    <h3>Salted Caramel Praline Ice Cream</h3>
+                    <p>Luscious caramel ice cream with a hint of sea salt and crunchy praline pieces.</p>
+                    <div class="price">₹160</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="figandhoney.jpeg" alt="Fig and Honey Ice Cream" />
+                <div class="menu-item-details">
+                    <h3>Fig and Honey Ice Cream</h3>
+                    <p>Sophisticated ice cream with sweet figs and a drizzle of wildflower honey, subtly luxurious.</p>
+                    <div class="price">₹135</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="belgiansundae.jpeg" alt="Belgian Chocolate Sundae" />
+                <div class="menu-item-details">
+                    <h3>Belgian Chocolate Sundae</h3>
+                    <p>Rich chocolate ice cream topped with warm Belgian chocolate sauce and candied almonds.</p>
+                    <div class="price">₹170</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="coconutkulfi.jpeg" alt="Coconut Cardamom Kulfi" />
+                <div class="menu-item-details">
+                    <h3>Coconut Cardamom Kulfi</h3>
+                    <p>Traditional Indian kulfi with creamy coconut and a whisper of cardamom, served sliced.</p>
+                    <div class="price">₹120</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="roselychee.jpeg" alt="Rose Lychee Sorbet" />
+                <div class="menu-item-details">
+                    <h3>Rose Lychee Sorbet</h3>
+                    <p>Delicate sorbet blending floral rose essence with juicy lychee, light and refreshing.</p>
+                    <div class="price">₹130</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="lemonicedtea.jpeg" alt="Iced Lemon Mint Tea" />
+                <div class="menu-item-details">
+                    <h3>Iced Lemon Mint Tea</h3>
+                    <p>Chilled tea with zesty lemon and fresh mint, a refined palate cleanser.</p>
+                    <div class="price">₹80</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

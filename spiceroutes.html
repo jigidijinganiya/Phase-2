@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spice Route - Menu</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --primary: #ff4081;
+            --text-color: #ffffff;
+            --secondary-text: #aaaaaa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Stall Info */
+        .restaurant-info {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .restaurant-info h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .restaurant-info p {
+            font-size: 1rem;
+            color: var(--secondary-text);
+            margin: 0.3rem 0;
+        }
+
+        .restaurant-info a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .restaurant-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            margin-bottom: 2rem;
+        }
+
+        .menu-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Menu Item */
+        .menu-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 1rem;
+        }
+
+        .menu-item-details {
+            flex: 1;
+        }
+
+        .menu-item-details h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+
+        .menu-item-details p {
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .menu-item-details .price {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-item img {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .restaurant-info h1 {
+                font-size: 1.5rem;
+            }
+
+            .menu-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Stall Info -->
+        <div class="restaurant-info">
+            <h1>Spice Route</h1>
+            <p>123 Festival Avenue, Main Campus, Mumbai, MH 400001, India</p>
+            <p>Phone: <a href="tel:+919876543210">+91 9876543210</a></p>
+            <p>Email: <a href="mailto:info@spiceroutefest.com">info@spiceroutefest.com</a></p>
+            <p>Operating Hours: 12:00 PM - 10:00 PM (During Vidyut Multi Fest)</p>
+        </div>
+
+        <!-- Menu Section -->
+        <div class="menu-section">
+            <h2>India’s Iconic Spicy Delights</h2>
+            <div class="menu-item">
+                <img src="dahibhalla.jpeg" alt="Dahi Bhalla" />
+                <div class="menu-item-details">
+                    <h3>Dahi Bhalla</h3>
+                    <p>Soft lentil dumplings in chilled yogurt, topped with spicy green chutney and fiery spices.</p>
+                    <div class="price">₹100</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="vindaloo.jpeg" alt="Vindaloo Chicken" />
+                <div class="menu-item-details">
+                    <h3>Vindaloo Chicken</h3>
+                    <p>Goan classic with tender chicken in a fiery vinegar and red chilli curry, bold and tangy.</p>
+                    <div class="price">₹260</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="spiceroute.jpg" alt="Hyderabadi Biryani" />
+                <div class="menu-item-details">
+                    <h3>Hyderabadi Chicken Biryani</h3>
+                    <p>Spicy basmati rice layered with chicken, green chillies, and saffron, cooked in dum style.</p>
+                    <div class="price">₹250</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="chilli chicken.jpeg" alt="Chilli Chicken" />
+                <div class="menu-item-details">
+                    <h3>Chilli Chicken</h3>
+                    <p>Indo-Chinese favorite with succulent chicken tossed in a spicy sauce with green chillies.</p>
+                    <div class="price">₹240</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="masalavada.jpeg" alt="Masala Vada" />
+                <div class="menu-item-details">
+                    <h3>Masala Vada</h3>
+                    <p>Crunchy South Indian lentil fritters spiced with green chillies, ginger, and curry leaves.</p>
+                    <div class="price">₹100</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="laalmaas.jpeg" alt="Rajasthani Laal Maas" />
+                <div class="menu-item-details">
+                    <h3>Rajasthani Laal Maas</h3>
+                    <p>Fiery mutton curry with Mathania red chillies, a bold Rajasthani delicacy.</p>
+                    <div class="price">₹300</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="fishfry.jpeg" alt="Amritsari Fish Fry" />
+                <div class="menu-item-details">
+                    <h3>Amritsari Fish Fry</h3>
+                    <p>Crispy fish fillets marinated in spicy gram flour batter, fried to golden perfection.</p>
+                    <div class="price">₹280</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="naan.jpeg" alt="Chilli Garlic Naan" />
+                <div class="menu-item-details">
+                    <h3>Chilli Garlic Naan</h3>
+                    <p>Soft tandoori naan topped with fiery green chillies and garlic for a spicy kick.</p>
+                    <div class="price">₹70</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="chaas.jpeg" alt="Spiced Chaas" />
+                <div class="menu-item-details">
+                    <h3>Spiced Chaas</h3>
+                    <p>Refreshing buttermilk with roasted cumin, green chillies, and a hint of black salt.</p>
+                    <div class="price">₹90</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="chettinad.jpeg" alt="Chettinad Chicken" />
+                <div class="menu-item-details">
+                    <h3>Chettinad Chicken</h3>
+                    <p>Spicy Tamil Nadu curry with chicken, black pepper, and roasted red chillies.</p>
+                    <div class="price">₹270</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

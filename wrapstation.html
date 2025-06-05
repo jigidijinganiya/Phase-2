@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wrapstation - Menu</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --primary: #ff4081;
+            --text-color: #ffffff;
+            --secondary-text: #aaaaaa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Stall Info */
+        .restaurant-info {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .restaurant-info h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .restaurant-info p {
+            font-size: 1rem;
+            color: var(--secondary-text);
+            margin: 0.3rem 0;
+        }
+
+        .restaurant-info a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .restaurant-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            margin-bottom: 2rem;
+        }
+
+        .menu-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Menu Item */
+        .menu-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 1rem;
+        }
+
+        .menu-item-details {
+            flex: 1;
+        }
+
+        .menu-item-details h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+
+        .menu-item-details p {
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .menu-item-details .price {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-item img {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .restaurant-info h1 {
+                font-size: 1.5rem;
+            }
+
+            .menu-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="restaurant-info">
+            <h1>Wrap Station</h1>
+            <p>Food Stall Area, Near Stage 3, Vidyut Multi Fest, Mumbai, MH 400001, India</p>
+            <p>Get your roll on: <a href="tel:+917766554433">+91 7766554433</a></p>
+            <p>Email us your wrap cravings: <a href="mailto:order@wrapstationfest.com">order@wrapstationfest.com</a></p>
+            <p>Open for wrapping: 11:30 AM - 09:30 PM (Join us during the Fest!)</p>
+        </div>
+
+        <div class="menu-section">
+            <h2>Deliciously Wrapped Creations</h2>
+            <div class="menu-item">
+                <img src="paneertikkawrap.jpeg" alt="Spicy Paneer Tikka Wrap" />
+                <div class="menu-item-details">
+                    <h3>Spicy Paneer Tikka Wrap</h3>
+                    <p>Grilled paneer tikka with a fiery marinade, fresh veggies, and mint chutney in a soft tortilla.</p>
+                    <div class="price">₹160</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="chickencaeserwrap.jpeg" alt="Chicken Caesar Wrap" />
+                <div class="menu-item-details">
+                    <h3>Chicken Caesar Wrap</h3>
+                    <p>Tender grilled chicken, crisp romaine lettuce, parmesan cheese, and creamy Caesar dressing.</p>
+                    <div class="price">₹170</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="meditarraneanfalafel.jpeg" alt="Mediterranean Falafel Wrap" />
+                <div class="menu-item-details">
+                    <h3>Mediterranean Falafel Wrap</h3>
+                    <p>Crispy falafel, hummus, pickled vegetables, tomatoes, and a drizzle of tahini in a warm pita.</p>
+                    <div class="price">₹150</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="bbqpulledjackfruit.jpeg" alt="BBQ Pulled Jackfruit Wrap" />
+                <div class="menu-item-details">
+                    <h3>BBQ Pulled Jackfruit Wrap</h3>
+                    <p>Smoky BBQ pulled jackfruit, crunchy coleslaw, and a tangy BBQ sauce in a whole wheat wrap.</p>
+                    <div class="price">₹155</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="shrimpfiesta.jpeg" alt="Shrimp Fiesta Wrap" />
+                <div class="menu-item-details">
+                    <h3>Shrimp Fiesta Wrap</h3>
+                    <p>Grilled shrimp with bell peppers, onions, corn salsa, and a spicy cilantro-lime dressing.</p>
+                    <div class="price">₹180</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="veggiedelight.jpeg" alt="Veggie Delight Wrap" />
+                <div class="menu-item-details">
+                    <h3>Veggie Delight Wrap</h3>
+                    <p>Roasted vegetables (zucchini, eggplant, bell peppers) with feta cheese and pesto in a spinach wrap.</p>
+                    <div class="price">₹145</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="keemamasalawrap.jpeg" alt="Keema Masala Wrap" />
+                <div class="menu-item-details">
+                    <h3>Keema Masala Wrap</h3>
+                    <p>Spicy minced meat (chicken/lamb) cooked in aromatic Indian spices, wrapped with onions and mint.</p>
+                    <div class="price">₹175</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="sweetcornspinachwrap.jpeg" alt="Sweet Corn & Spinach Wrap" />
+                <div class="menu-item-details">
+                    <h3>Sweet Corn & Spinach Wrap</h3>
+                    <p>Creamy sweet corn and sautéed spinach with a hint of garlic and cheese in a multigrain wrap.</p>
+                    <div class="price">₹140</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="tunasaladwrap.jpeg" alt="Tuna Salad Wrap" />
+                <div class="menu-item-details">
+                    <h3>Tuna Salad Wrap</h3>
+                    <p>Classic tuna salad with celery, mayonnaise, and lettuce in a whole wheat tortilla.</p>
+                    <div class="price">₹165</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="koreanbbqtofuwrap.jpeg" alt="Korean BBQ Tofu Wrap" />
+                <div class="menu-item-details">
+                    <h3>Korean BBQ Tofu Wrap</h3>
+                    <p>Marinated and grilled tofu in a sweet and spicy Korean BBQ sauce with pickled slaw.</p>
+                    <div class="price">₹150</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

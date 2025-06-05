@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VR Challenge - Immersive Reality Showdown</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #111;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 25px;
+    }
+
+    .event-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 5px 14px rgba(0,0,0,0.7);
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      color: #ff4180;
+      text-align: center;
+      margin: 20px 0 30px;
+      font-size: 2.9em;
+      font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .event-tag {
+      text-align: center;
+      font-size: 1.05em;
+      color: #ccc;
+      margin-bottom: 35px;
+    }
+
+    .event-tag span {
+      margin: 0 12px;
+      padding: 5px 12px;
+      background-color: #222;
+      border-radius: 6px;
+    }
+
+    .price {
+      color: #ff0000;
+      font-weight: bold;
+    }
+
+    .content-wrapper {
+      display: flex;
+      gap: 35px;
+      flex-wrap: wrap;
+    }
+
+    .main-content, .sidebar {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .vr-info {
+      font-size: 1.12em;
+      line-height: 1.75;
+    }
+
+    h2 {
+      color: #da386e;
+      margin-bottom: 12px;
+      font-size: 1.65em;
+      border-left: 3px solid #da386e;
+      padding-left: 10px;
+    }
+
+    .timer {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .timer div {
+      background-color: #333;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .timer span {
+      display: block;
+      font-size: 1.7em;
+      font-weight: bold;
+      color: #00ffff;
+    }
+
+    .event-plan {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0 25px;
+      background-color: #222;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .event-plan td {
+      padding: 14px;
+      border: 1px solid #444;
+      color: #ddd;
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+
+    .info-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+
+    .info-container > div {
+      text-align: center;
+    }
+
+    .info-container p {
+      margin: 8px 0;
+      color: #ddd;
+    }
+
+    .highlight {
+      color: #3c78e7;
+      font-weight: bold;
+    }
+
+    .signup-btn {
+      display: block;
+      width: fit-content;
+      margin: 50px auto 0;
+      padding: 16px 40px;
+      background-color: #ff4180;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease, box-shadow 0.2s ease;
+    }
+
+    .signup-btn:hover {
+      background-color: #da386e;
+      box-shadow: 0 3px 12px rgba(218, 56, 110, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+
+      .timer {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .info-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="vrchallenge.jpeg" alt="VR Challenge Event" class="event-image" />
+
+    <h1>VR Challenge</h1>
+    <div class="event-tag">
+      <span>Virtual Reality Competition</span>
+      <span>Solo & Team Missions</span>
+      <span class="price">₹649 + taxes</span>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="main-content">
+        <div class="section">
+          <h2>Step Into the Action</h2>
+          <div class="vr-info">
+            <p>Welcome to the <strong>VR Challenge</strong>, where you’ll immerse yourself in cutting-edge virtual reality and compete in mind-blowing missions!</p>
+            
+            <p>This event pushes the boundaries of gaming with fully immersive VR experiences. Test your skills in dynamic challenges, from futuristic combat to puzzle-solving adventures, and prove you’re the ultimate VR champion.</p>
+            
+            <p>Event features:</p>
+            <ul>
+              <li>Competitive VR arenas with unique game modes</li>
+              <li>Hands-on demos of the latest VR headsets</li>
+              <li>Workshops on VR game design and mechanics</li>
+              <li>Live leaderboards with real-time updates</li>
+              <li>Exclusive VR swag and top-tier prizes</li>
+            </ul>
+            
+            <p>Featured VR titles: Beat Saber, Half-Life: Alyx, Superhot VR. All equipment provided, including high-end VR rigs and motion trackers.</p>
+            
+            <p>Hosted by <strong>Ethan "VRVortex" Kim</strong>, a VR gaming pioneer and tech enthusiast, who’ll guide players and share insider tips on mastering VR.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="section">
+          <h2>Launch Countdown</h2>
+          <div class="timer">
+            <div>
+              <span id="days">00</span>Days
+            </div>
+            <div>
+              <span id="hours">00</span>Hours
+            </div>
+            <div>
+              <span id="minutes">00</span>Minutes
+            </div>
+            <div>
+              <span id="seconds">00</span>Seconds
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Challenge Roadmap</h2>
+          <table class="event-plan">
+            <tr>
+              <td>Registration Closes</td>
+              <td>15 November</td>
+            </tr>
+            <tr>
+              <td>VR Bootcamp</td>
+              <td>20 November, 10:00 AM</td>
+            </tr>
+            <tr>
+              <td>Main Challenges</td>
+              <td>21 November, 12:00 PM</td>
+            </tr>
+            <tr>
+              <td>Final Showdown</td>
+              <td>22 November, 4:00 PM</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="info-container">
+          <div class="venue">
+            <h2>VR Arena</h2>
+            <p>TechTrend Pavilion<br>InnoFest Grounds<br><span class="highlight">Streamed on VRChat</span></p>
+          </div>
+
+          <div class="contact">
+            <h2>Reach Out</h2>
+            <p><span class="highlight">Sanya Gupta</span><br>Event Lead<br>vrchallenge@innofest.com<br>+91 8901234567</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#" class="signup-btn">Enter the VR Realm</a>
+  </div>
+
+  <script>
+    const eventDate = new Date("November 21, 2025 12:00:00").getTime();
+
+    const countdown = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+      document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+      document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+      document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("days").innerHTML = "00";
+        document.getElementById("hours").innerHTML = "00";
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

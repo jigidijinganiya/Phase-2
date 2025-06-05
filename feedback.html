@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Aarohan</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="auth.js"></script>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --primary: #ff4081;
+            --text-color: #ffffff;
+            --nav-bg: #1a1a1a;
+            --nav-hover: #2a2a2a;
+            --star-color: #ffd700;
+            --star-gray: #555;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: #000;
+          color: #fff;
+          scroll-behavior: smooth;
+        }
+        
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+        
+        /* HEADER & NAV */
+        header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #111;
+          padding: 1rem 2rem;
+          position: sticky;
+          top: 0;
+          z-index: 10;
+          box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
+        }
+        
+        header img {
+          width: 70px;
+          height: 50px;
+        }
+        
+        .logo img {
+          height: 70px;
+          width: 75px;
+          font-weight: bold;
+        }
+        
+        .navbar {
+          list-style: none;
+          display: flex;
+          gap: 2rem;
+        }
+        
+        .navbar li a {
+          color: white;
+          text-decoration: none;
+          padding: 8px 14px;
+          transition: 0.3s ease;
+          border-radius: 5px;
+        }
+        
+        .navbar li a:hover {
+          background: #ff4081;
+          color: #000;
+        }
+
+
+        .main-content {
+            padding: 2rem;
+            margin-top: 70px;
+            min-height: calc(100vh - 70px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .feedback-container {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: normal;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid #333;
+            font-size: 1rem;
+            outline: none;
+            background-color: #262626;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #aaa;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .rating-group {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .rating-group input[type="radio"] {
+            display: none;
+        }
+
+        .rating-group label {
+            cursor: pointer;
+        }
+
+        .rating-group label svg {
+            fill: var(--star-gray);
+            width: 30px;
+            height: 30px;
+            transition: fill 0.3s ease, transform 0.2s ease;
+        }
+
+        .rating-group label:hover svg {
+            fill: var(--star-color);
+            transform: scale(1.2);
+        }
+
+        /* Ensure all stars reset to gray by default when a rating is selected */
+        .rating-group input:checked ~ label svg {
+            fill: var(--star-gray);
+            transform: scale(1);
+        }
+
+        /* Specific rules for each rating selection */
+        #rating1:checked + label svg,
+        #rating2:checked + label svg,
+        #rating2:checked ~ label[for="rating1"] svg,
+        #rating3:checked + label svg,
+        #rating3:checked ~ label[for="rating1"] svg,
+        #rating3:checked ~ label[for="rating2"] svg,
+        #rating4:checked + label svg,
+        #rating4:checked ~ label[for="rating1"] svg,
+        #rating4:checked ~ label[for="rating2"] svg,
+        #rating4:checked ~ label[for="rating3"] svg,
+        #rating5:checked + label svg,
+        #rating5:checked ~ label[for="rating1"] svg,
+        #rating5:checked ~ label[for="rating2"] svg,
+        #rating5:checked ~ label[for="rating3"] svg,
+        #rating5:checked ~ label[for="rating4"] svg {
+            fill: var(--star-color);
+            transform: scale(1.2);
+        }
+
+        .sentiment-indicator {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .sentiment-indicator.show {
+            opacity: 1;
+        }
+
+        .submit-btn {
+            background-color: var(--primary);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            color: var(--text-color);
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #e03572;
+        }
+
+        .confirmation-message {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: var(--primary);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .confirmation-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feedback-display {
+            max-width: 800px;
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+
+        .feedback-item {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1rem;
+        }
+
+        .feedback-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .feedback-item p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+
+        .feedback-item .rating {
+            color: var(--star-color);
+            font-size: 1rem;
+        }
+
+        footer {
+            background-color: var(--nav-bg);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+            width: 100%;
+        }
+
+        .sponsor-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .sponsor-section h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .sponsor-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .sponsor-item {
+            text-align: center;
+        }
+
+        .sponsor-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .sponsor-item img:hover {
+            transform: scale(1.1);
+        }
+
+        .sponsor-item span {
+            display: block;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-top: 0.5rem;
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-copyright {
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Logo.png" alt="Logo">
+    </div>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="event.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+         <li id="auth-section"></li>
+      </ul>
+    </nav>
+  </header>
+
+   <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close">×</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+    <div class="main-content">
+        <h2>Share Your Feedback</h2>
+        <div class="feedback-container">
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="event">Event Attended (Optional)</label>
+                    <select id="event" name="event" aria-describedby="event-desc">
+                        <option value="" selected>Select an event (optional)</option>
+                        <option value="arijit_singh">Arjit Singh Live Concert</option>
+                        <option value="choreo_night">Choreo Night</option>
+                        <option value="shreya_ghoshal">Shreya Ghoshal Live Concert</option>
+                        <option value="auto_expo">AUTO Expo</option>
+                        <option value="code_clash">Code Clash</option>
+                        <option value="bot_battle">Bot Battle</option>
+                        <option value="circuit_masters">Circuit Masters</option>
+                        <option value="web_wonders">Web Wonders</option>
+                        <option value="ai_arena">AI Arena</option>
+                        <option value="quantum_quizzers">Quantum Quizzers</option>
+                        <option value="hack_surge">Hack Surge</option>
+                        <option value="debug_duel">Debug Duel</option>
+                        <option value="app_quest">App Quest</option>
+                        <option value="treasure_trials">Treasure Trials</option>
+                        <option value="open_mic">Open Mic</option>
+                        <option value="art_attack">Art Attack</option>
+                        <option value="photography_contest">Photography Contest</option>
+                        <option value="cosplay_show">Cosplay Show</option>
+                        <option value="dance_off">Dance Off</option>
+                        <option value="drama_fest">Drama Fest</option>
+                        <option value="slam_poetry">Slam Poetry</option>
+                        <option value="fashion_parade">Fashion Parade</option>
+                        <option value="talent_twist">Talent Twist</option>
+                        <option value="lan_party">LAN Party</option>
+                        <option value="vr_challenge">VR Challenge</option>
+                        <option value="console_clash">Console Clash</option>
+                        <option value="mobile_madness">Mobile Madness</option>
+                        <option value="arcade_blitz">Arcade Blitz</option>
+                        <option value="escape_room">Escape Room</option>
+                        <option value="board_brawl">Board Brawl</option>
+                        <option value="trivia_time">Trivia Time</option>
+                        <option value="paintball_zone">Paintball Zone</option>
+                        <option value="carnival_chaos">Carnival Chaos</option>
+                    </select>
+                    <small id="event-desc" class="form-note">Select the event you attended, if applicable.</small>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rate Your Experience</label>
+                    <div class="rating-group" role="radiogroup" aria-labelledby="rating-label">
+                        <input type="radio" id="rating1" name="rating" value="1" required aria-label="1 star">
+                        <label for="rating1">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        </label>
+                        <input type="radio" id="rating2" name="rating" value="2" aria-label="2 stars">
+                        <label for="rating2">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        </label>
+                        <input type="radio" id="rating3" name="rating" value="3" aria-label="3 stars">
+                        <label for="rating3">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        </label>
+                        <input type="radio" id="rating4" name="rating" value="4" aria-label="4 stars">
+                        <label for="rating4">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        </label>
+                        <input type="radio" id="rating5" name="rating" value="5" aria-label="5 stars">
+                        <label for="rating5">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                        </label>
+                    </div>
+                    <div class="sentiment-indicator" id="sentimentIndicator"></div>
+                </div>
+                <div class="form-group">
+                    <label for="comments">Comments</label>
+                    <textarea id="comments" name="comments" placeholder="Share your thoughts about Aarohan..." required aria-required="true"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+                <div class="confirmation-message" id="confirmationMessage">Thank you for your feedback!</div>
+            </form>
+        </div>
+
+        <div class="feedback-display">
+            <h2>Recent Feedback</h2>
+             <div id="feedbackList">
+                <div class="feedback-item">
+                    <h4>Akshay</h4>
+                    <p class="rating">★★★★★</p>
+                    <p>The Arijit Singh concert was phenomenal! Amazing organization and vibe.</p>
+                </div>
+                <div class="feedback-item">
+                    <h4>Sooraj</h4>
+                    <p class="rating">★★★★</p>
+                    <p>Loved the Code Clash event, but the food stalls could have more variety.</p>
+                </div>
+                 <div class="feedback-item">
+                    <h4>Mohit</h4>
+                    <p class="rating">★★★★</p>
+                    <p>Loved the Photography contest, The concert should have included songs from different language.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="sponsor-section">
+            <h3>Our Sponsors</h3>
+            <div class="sponsor-list">
+                <div class="sponsor-item">
+                    <img src="sponsor1.jpg" alt="Sponsor 1">
+                </div>
+                <div class="sponsor-item">
+                    <img src="sponsor2.jpg" alt="Sponsor 2">
+                </div>
+                <div class="sponsor-item">
+                    <img src="sponsor3.jpg" alt="Sponsor 3">
+                </div>
+                </div>
+                    <div class="sponsor-item">
+                        <img src="sponsor4.jpg" alt="Sponsor 4">
+                </div>
+            </div>
+        </div
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="events.html">Events</a>
+            <a href="contact.html">Contact</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="register.html">Register</a>
+        </div>
+        <div class="footer-copyright">
+            © 2025 Aarohan Fest. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const feedbackForm = document.getElementById('feedbackForm');
+        const feedbackList = document.getElementById('feedbackList');
+        const sentimentIndicator = document.getElementById('sentimentIndicator');
+        const confirmationMessage = document.getElementById('confirmationMessage');
+        const ratingInputs = document.querySelectorAll('input[name="rating"]');
+        const ratingLabels = document.querySelectorAll('.rating-group label svg');
+
+        // Function to update star colors based on selection
+        function updateStarColors(selectedRating) {
+            ratingLabels.forEach((svg, index) => {
+                if (index < selectedRating) {
+                    svg.style.fill = 'var(--star-color)';
+                    svg.style.transform = 'scale(1.1)';
+                } else {
+                    svg.style.fill = 'var(--star-gray)';
+                    svg.style.transform = 'scale(1)';
+                }
+            });
+        }
+
+        // Event listener for rating input changes
+        ratingInputs.forEach((input) => {
+            input.addEventListener('change', () => {
+                const ratingValue = parseInt(input.value);
+                updateStarColors(ratingValue);
+            });
+        });
+
+        feedbackForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(feedbackForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                event: formData.get('event'),
+                rating: formData.get('rating'),
+                comments: formData.get('comments')
+            };
+
+            const feedbackItem = document.createElement('div');
+            feedbackItem.className = 'feedback-item';
+            feedbackItem.innerHTML = `
+                <h4>${data.name || 'Anonymous'}</h4>
+                <p class="rating">${'★'.repeat(parseInt(data.rating))}</p>
+                <p>${data.comments}</p>
+            `;
+            feedbackList.prepend(feedbackItem);
+
+            console.log('Feedback submitted:', data);
+            confirmationMessage.classList.add('show');
+            setTimeout(() => confirmationMessage.classList.remove('show'), 3000);
+            feedbackForm.reset();
+            updateStarColors(0); // Reset stars
+            sentimentIndicator.classList.remove('show');
+        });
+
+        feedbackForm.addEventListener('input', function () {
+            const rating = document.querySelector('input[name="rating"]:checked');
+            if (rating) {
+                const ratingValue = parseInt(rating.value);
+                sentimentIndicator.classList.add('show');
+                if (ratingValue >= 4) {
+                    sentimentIndicator.textContent = '😊';
+                } else if (ratingValue === 3) {
+                    sentimentIndicator.textContent = '😐';
+                } else {
+                    sentimentIndicator.textContent = '😔';
+                }
+            } else {
+                sentimentIndicator.classList.remove('show');
+            }
+        });
+
+        ratingInputs.forEach((input, index) => {
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' && index < ratingInputs.length - 1) {
+                    ratingInputs[index + 1].focus();
+                    ratingInputs[index + 1].checked = true;
+                    ratingInputs[index + 1].dispatchEvent(new Event('change'));
+                } else if (e.key === 'ArrowLeft' && index > 0) {
+                    ratingInputs[index - 1].focus();
+                    ratingInputs[index - 1].checked = true;
+                    ratingInputs[index - 1].dispatchEvent(new Event('change'));
+                }
+            });
+        });
+    </script>
+</body>
+</html>

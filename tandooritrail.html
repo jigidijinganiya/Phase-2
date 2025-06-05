@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tandoori Trail - Menu</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --primary: #ff4081;
+            --text-color: #ffffff;
+            --secondary-text: #aaaaaa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Stall Info */
+        .restaurant-info {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .restaurant-info h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .restaurant-info p {
+            font-size: 1rem;
+            color: var(--secondary-text);
+            margin: 0.3rem 0;
+        }
+
+        .restaurant-info a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .restaurant-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            margin-bottom: 2rem;
+        }
+
+        .menu-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Menu Item */
+        .menu-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 1rem;
+        }
+
+        .menu-item-details {
+            flex: 1;
+        }
+
+        .menu-item-details h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+
+        .menu-item-details p {
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .menu-item-details .price {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-item img {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .restaurant-info h1 {
+                font-size: 1.5rem;
+            }
+
+            .menu-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Stall Info -->
+        <div class="restaurant-info">
+            <h1>Tandoori Trail</h1>
+            <p>129 Festival Avenue, Main Campus, Mumbai, MH 400001, India</p>
+            <p>Phone: <a href="tel:+919876543213">+91 9876543213</a></p>
+            <p>Email: <a href="mailto:info@tandooritrailfest.com">info@tandooritrailfest.com</a></p>
+            <p>Operating Hours: 12:00 PM - 10:00 PM (During Vidyut Multi Fest)</p>
+        </div>
+
+        <!-- Menu Section -->
+        <div class="menu-section">
+            <h2>Tandoori Delights</h2>
+            <div class="menu-item">
+                <img src="tandoori.jpeg" alt="Tandoori Chicken Tikka" />
+                <div class="menu-item-details">
+                    <h3>Tandoori Chicken Tikka</h3>
+                    <p>Tender chicken morsels marinated in yogurt and spices, charred to perfection in a tandoor.</p>
+                    <div class="price">₹240</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="paneer tikka.jpeg" alt="Paneer Tikka" />
+                <div class="menu-item-details">
+                    <h3>Paneer Tikka</h3>
+                    <p>Soft paneer cubes marinated with tandoori masala, grilled with bell peppers and onions.</p>
+                    <div class="price">₹220</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="tandoori malai prawns.jpeg" alt="Tandoori Malai Prawns" />
+                <div class="menu-item-details">
+                    <h3>Tandoori Malai Prawns</h3>
+                    <p>Juicy prawns coated in a creamy marinade of cashew and spices, tandoor-grilled.</p>
+                    <div class="price">₹300</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="seekhkebab.jpeg" alt="Chicken Seekh Kebab" />
+                <div class="menu-item-details">
+                    <h3>Chicken Seekh Kebab</h3>
+                    <p>Minced chicken blended with aromatic spices, skewered and grilled in a clay oven.</p>
+                    <div class="price">₹230</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="hariyali kebab.jpeg" alt="Chicken Hariyali Tikka" />
+                <div class="menu-item-details">
+                    <h3>Chicken Hariyali Tikka</h3>
+                    <p>Chicken marinated in a vibrant green paste of cilantro, mint, and spices, tandoor-cooked.</p>
+                    <div class="price">₹250</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="butter chicken.jpeg" alt="Butter Chicken" />
+                <div class="menu-item-details">
+                    <h3>Butter Chicken</h3>
+                    <p>Tandoori chicken simmered in a rich, creamy tomato sauce with butter and mild spices.</p>
+                    <div class="price">₹260</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="naan.jpeg" alt="Garlic Naan" />
+                <div class="menu-item-details">
+                    <h3>Garlic Naan</h3>
+                    <p>Soft tandoori flatbread infused with garlic, brushed with butter for a perfect pairing.</p>
+                    <div class="price">₹60</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="spiceroute.jpg" alt="Chicken Biryani" />
+                <div class="menu-item-details">
+                    <h3>Chicken Biryani</h3>
+                    <p>Fragrant basmati rice layered with spiced chicken, saffron, and fresh herbs.</p>
+                    <div class="price">₹240</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="download.jpeg" alt="Mango Lassi" />
+                <div class="menu-item-details">
+                    <h3>Mango Lassi</h3>
+                    <p>Chilled yogurt-based drink blended with sweet mango puree, a refreshing complement.</p>
+                    <div class="price">₹110</div>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="masalachai.jpeg" alt="Masala Chai" />
+                <div class="menu-item-details">
+                    <h3>Masala Chai</h3>
+                    <p>Traditional Indian tea brewed with milk, cardamom, and warming spices.</p>
+                    <div class="price">₹70</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

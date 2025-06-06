@@ -74,7 +74,43 @@
           background: #ff4081;
           color: #000;
         }
+        .hamburger {
+  display: none;
+}
 
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 1001;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    background: #111;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .navbar li {
+    margin: 10px 0;
+    text-align: right;
+  }
+}
         /* Auth Styles (from index.html) */
         .modal {
           display: none;
@@ -396,6 +432,7 @@
             <img src="Logo.png" alt="Logo">
         </div>
         <nav>
+             <div class="hamburger" onclick="toggleMenu()">☰</div>
             <ul class="navbar">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -556,5 +593,11 @@
         });
     </script>
     <script src="auth.js"></script>
+    <script>
+  function toggleMenu() {
+    document.querySelector('.navbar').classList.toggle('active');
+  }
+</script>
+
 </body>
 </html>

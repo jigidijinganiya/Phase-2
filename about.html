@@ -153,11 +153,55 @@
         text-align: center;
     }
 
-
+    .hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
     /* RESPONSIVE */
     @media (max-width: 768px) {
         .highlights {
             grid-template-columns: 1fr;
+        .hamburger {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 1001;
+  }
+
+  .navbar {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #111;
+    flex-direction: column;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    z-index: 1000;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .navbar li {
+    margin: 10px 0;
+    text-align: right;
+  }
+
+  header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
         }
     }
   </style>
@@ -167,18 +211,19 @@
   <!-- NAVBAR -->
   <header>
     <div class="logo">
-      <img src="Logo.png" alt="Logo">
-    </div>
-    <nav>
-      <ul class="navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="feedback.html">Feedback</a></li>
-        <li id="auth-section"></li>
-      </ul>
-    </nav>
+    <img src="Logo.png" alt="Logo">
+  </div>
+  <nav>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li id="auth-section"></li>
+    </ul>
+  </nav>
   </header>
   <div id="loginModal" class="modal">
     <div class="modal-content">
@@ -254,6 +299,11 @@
     </div>
   </footer>
   <script src="auth.js"></script>
+  <script>
+  function toggleMenu() {
+    document.querySelector('.navbar').classList.toggle('active');
+  }
+</script>
 </body>
 </html>
 

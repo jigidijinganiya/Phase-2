@@ -283,43 +283,27 @@
             padding: 0.75rem;
             font-size: 1.1rem;
         }
-
-        /* MODIFICATION FOR SMALLER SCREENS - Keep horizontal slide, show 2 events */
         @media (max-width: 768px) {
             .carousel-container {
-                /* Keep flex and overflow-x: auto */
-                flex-wrap: nowrap; /* Ensure no wrapping, keep horizontal */
-                padding-bottom: 1rem; /* Keep padding for scrollbar visibility if needed */
-                justify-content: flex-start; /* Align items to the start */
+                flex-wrap: nowrap; 
+                padding-bottom: 1rem; 
+                justify-content: flex-start; 
             }
-
             .event-card {
-                /* Calculate width for 2 cards with a gap and some padding for visibility */
-                /* viewport width - (padding on left/right of wrapper) - (margin between cards) / 2 */
-                /* Let's assume overall content area is 100% and we want a small margin in between */
-                flex: 0 0 calc(50% - 0.75rem); /* Roughly 2 cards per view, minus a gap */
-                width: calc(50% - 0.75rem); /* Ensure consistent width */
-                margin-right: 1.5rem; /* Space between cards */
-                /* No margin-bottom needed as they are not wrapping vertically */
+                flex: 0 0 calc(50% - 0.75rem); 
+                width: calc(50% - 0.75rem); 
+                margin-right: 1.5rem; 
             }
-
-            /* Adjust the last card's margin to prevent excessive space if desired */
             .event-card:last-child {
                 margin-right: 0;
             }
-
-            /* Adjust image height for better fit on smaller screens */
             .event-card img {
-                height: 150px; /* Adjust as needed */
+                height: 110px; 
             }
-
-            /* Ensure scroll buttons are visible and properly positioned */
             .scroll-wrapper .scroll-btn {
-                display: block; /* Make sure they are visible */
-                opacity: 1; /* Always show them on mobile, or adjust as desired */
+                display: block; 
+                opacity: 1; 
             }
-
-            /* Adjust scroll button padding for smaller screens if needed */
             .scroll-btn {
                 font-size: 1.2rem;
                 padding: 0.4rem 0.8rem;

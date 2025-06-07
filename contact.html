@@ -75,8 +75,8 @@
           color: #000;
         }
         .hamburger {
-  display: none;
-}
+          display: none;
+        }
 
 @media (max-width: 768px) {
   .hamburger {
@@ -89,9 +89,6 @@
     right: 25px;
     z-index: 1001;
   }
-    nav{
-        position: relative;
-    }
   .navbar {
     display: none;
     flex-direction: column;
@@ -102,7 +99,13 @@
     padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    z-index:1000;
   }
+    header{
+        flex-direction: row;
+        align-itmes:center;
+        justify-content:space-between;
+        position:relative;
 
   .navbar.active {
     display: flex;
@@ -597,15 +600,9 @@
     <script src="auth.js"></script>
     <script>
   function toggleMenu() {
-    document.querySelector('.navbar').classList.toggle('active');
-document.querySelectorAll('.navbar a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.querySelector('.navbar').classList.remove('active');
-  });
-});
-
-  }
-</script>
+   document.querySelector('.navbar').classList.toggle('active');
+    }
+    </script>
 
 </body>
 </html>

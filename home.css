@@ -13,7 +13,10 @@ body {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color:#ff4081;
+}
+h1{
+  color:#ff4081;
 }
 
 /* HEADER & NAV */

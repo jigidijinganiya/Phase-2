@@ -26,98 +26,98 @@
         }
 
         body {
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          background-color: #000;
-          color: #fff;
-          scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000;
+            color: #fff;
+            scroll-behavior: smooth;
         }
-        
+
         a {
-          text-decoration: none;
-          color: inherit;
+            text-decoration: none;
+            color: inherit;
         }
-        
+
         /* HEADER & NAV */
         header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          background-color: #111;
-          padding: 1rem 2rem;
-          position: sticky;
-          top: 0;
-          z-index: 10;
-          box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #111;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
         }
-        
+
         header img {
-          width: 70px;
-          height: 50px;
+            width: 70px;
+            height: 50px;
         }
-        
+
         .logo img {
-          height: 70px;
-          width: 75px;
-          font-weight: bold;
+            height: 70px;
+            width: 75px;
+            font-weight: bold;
         }
-        
+
         .navbar {
-          list-style: none;
-          display: flex;
-          gap: 2rem;
+            list-style: none;
+            display: flex;
+            gap: 2rem;
         }
-        
+
         .navbar li a {
-          color: white;
-          text-decoration: none;
-          padding: 8px 14px;
-          transition: 0.3s ease;
-          border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            padding: 8px 14px;
+            transition: 0.3s ease;
+            border-radius: 5px;
         }
-        
+
         .navbar li a:hover {
-          background: #ff4081;
-          color: #000;
+            background: #ff4081;
+            color: #000;
         }
+
         .hamburger {
-  display: none;
-}
+            display: none;
+        }
 
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    z-index: 1001;
-  }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+                font-size: 2rem;
+                color: white;
+                cursor: pointer;
+                position: absolute;
+                top: 25px;
+                right: 25px;
+                z-index: 1001;
+            }
 
-  .navbar {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    right: 20px;
-    top: 70px;
-    background: #111;
-    padding: 10px 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255,255,255,0.2);
-  }
+            .navbar {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                right: 20px;
+                top: 70px;
+                background: #111;
+                padding: 10px 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            }
 
-  .navbar.active {
-    display: flex;
-  }
+            .navbar.active {
+                display: flex;
+            }
 
-  .navbar li {
-    margin: 10px 0;
-    text-align: right;
-  }
-}
+            .navbar li {
+                margin: 10px 0;
+                text-align: right;
+            }
+        }
 
-        
 
         /* Main content container */
         .main-content {
@@ -245,10 +245,12 @@
             scroll-behavior: smooth;
             padding-bottom: 1rem;
             scrollbar-width: none;
+            /* For Firefox */
         }
 
         .carousel-container::-webkit-scrollbar {
             display: none;
+            /* For Chrome, Safari, and Opera */
         }
 
         /* Event Card */
@@ -281,19 +283,50 @@
             padding: 0.75rem;
             font-size: 1.1rem;
         }
-        @media (max-width: 768px){
+
+        /* MODIFICATION FOR SMALLER SCREENS - Keep horizontal slide, show 2 events */
+        @media (max-width: 768px) {
+            .carousel-container {
+                /* Keep flex and overflow-x: auto */
+                flex-wrap: nowrap; /* Ensure no wrapping, keep horizontal */
+                padding-bottom: 1rem; /* Keep padding for scrollbar visibility if needed */
+                justify-content: flex-start; /* Align items to the start */
+            }
+
             .event-card {
-             width: 48%;      
-            margin-bottom: 1rem;
-            margin-right: 2%; 
+                /* Calculate width for 2 cards with a gap and some padding for visibility */
+                /* viewport width - (padding on left/right of wrapper) - (margin between cards) / 2 */
+                /* Let's assume overall content area is 100% and we want a small margin in between */
+                flex: 0 0 calc(50% - 0.75rem); /* Roughly 2 cards per view, minus a gap */
+                width: calc(50% - 0.75rem); /* Ensure consistent width */
+                margin-right: 1.5rem; /* Space between cards */
+                /* No margin-bottom needed as they are not wrapping vertically */
             }
-            .event-card:nth-child(2n) {
-            margin-right: 0; 
-             }
-             .event-card img {
-            height: 180px;  
-                }
+
+            /* Adjust the last card's margin to prevent excessive space if desired */
+            .event-card:last-child {
+                margin-right: 0;
             }
+
+            /* Adjust image height for better fit on smaller screens */
+            .event-card img {
+                height: 150px; /* Adjust as needed */
+            }
+
+            /* Ensure scroll buttons are visible and properly positioned */
+            .scroll-wrapper .scroll-btn {
+                display: block; /* Make sure they are visible */
+                opacity: 1; /* Always show them on mobile, or adjust as desired */
+            }
+
+            /* Adjust scroll button padding for smaller screens if needed */
+            .scroll-btn {
+                font-size: 1.2rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+
+
         /* Scroll Buttons */
         .scroll-btn {
             position: absolute;
@@ -330,44 +363,40 @@
 </head>
 
 <body>
-    <!-- NAVIGATION -->
-   <header>
-    <div class="logo">
-      <img src="Logo.png" alt="Logo">
+    <header>
+        <div class="logo">
+            <img src="Logo.png" alt="Logo">
+        </div>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li id="auth-section"></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
     </div>
-    <nav>
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
-      <ul class="navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="event.html">Events</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="feedback.html">Feedback</a></li>
-         <li id="auth-section"></li>
-      </ul>
-    </nav>
-  </header>
-  <!-- Login Modal -->
-  <div id="loginModal" class="modal">
-    <div class="modal-content">
-      <span class="close">×</span>
-      <h2>Login</h2>
-      <form id="loginForm">
-        <input type="text" id="username" placeholder="Username" required>
-        <input type="password" id="password" placeholder="Password" required>
-        <button type="submit">Login</button>
-      </form>
-    </div>
-  </div>
 
 
     <div class="main-content">
-        <!-- Search Bar -->
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Search for events..." />
         </div>
 
-        <!-- Highlighted Events Section -->
         <div class="highlighted-section">
             <div class="highlighted-carousel" id="highlightedCarousel">
                 <div class="highlighted-item">
@@ -401,37 +430,42 @@
             </div>
         </div>
 
-        <!-- Technical Events Section -->
         <div class="section">
             <h2>Technical Events</h2>
             <div class="scroll-wrapper">
                 <button class="scroll-btn left">◀</button>
                 <div class="carousel-container">
-                    <a href="codeclash.html" class="event-card"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" />
+                    <a href="codeclash.html" class="event-card"><img
+                            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" />
                         <div class="event-title">Code Clash</div>
                     </a>
-                    <a href="botbattle.html" class="event-card"><img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80" />
+                    <a href="botbattle.html" class="event-card"><img
+                            src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80" />
                         <div class="event-title">Bot Battle</div>
                     </a>
                     <a href="circuitmasters.html" class="event-card"><img src="circuitmasters.jpg" />
                         <div class="event-title">Circuit Masters</div>
                     </a>
-                    <a href="webwonders.html" class="event-card"><img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=600&q=80" />
+                    <a href="webwonders.html" class="event-card"><img
+                            src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=600&q=80" />
                         <div class="event-title">Web Wonders</div>
                     </a>
                     <a href="aiarena.html" class="event-card"><img src="aiarena.webp" />
                         <div class="event-title">AI Arena</div>
                     </a>
-                    <a href="quantumquizzers.html" class="event-card"><img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=600&q=80" />
+                    <a href="quantumquizzers.html" class="event-card"><img
+                            src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=600&q=80" />
                         <div class="event-title">Quantum Quizzers</div>
                     </a>
-                    <a href="hacksurge.html" class="event-card"><img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80" />
+                    <a href="hacksurge.html" class="event-card"><img
+                            src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=600&q=80" />
                         <div class="event-title">Hack Surge</div>
                     </a>
                     <a href="debugduel.html" class="event-card"><img src="debugduel.avif" />
                         <div class="event-title">Debug Duel</div>
                     </a>
-                    <a href="appquest.html" class="event-card"><img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=600&q=80" />
+                    <a href="appquest.html" class="event-card"><img
+                            src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=600&q=80" />
                         <div class="event-title">App Quest</div>
                     </a>
                 </div>
@@ -439,7 +473,6 @@
             </div>
         </div>
 
-        <!-- Non-Technical Events Section -->
         <div class="section">
             <h2>Non-Technical Events</h2>
             <div class="scroll-wrapper">
@@ -451,16 +484,19 @@
                     <a href="openmic.html" class="event-card"><img src="openmic.png" />
                         <div class="event-title">Open Mic</div>
                     </a>
-                    <a href="artattack.html" class="event-card"><img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=600&q=80" />
+                    <a href="artattack.html" class="event-card"><img
+                            src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=600&q=80" />
                         <div class="event-title">Art Attack</div>
                     </a>
-                    <a href="photographycontest.html" class="event-card"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" />
+                    <a href="photographycontest.html" class="event-card"><img
+                            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" />
                         <div class="event-title">Photography Contest</div>
                     </a>
                     <a href="cosplayshow.html" class="event-card"><img src="cosplayshow.png" />
                         <div class="event-title">Cosplay Show</div>
                     </a>
-                    <a href="danceoff.html" class="event-card"><img src="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=600&q=80" />
+                    <a href="danceoff.html" class="event-card"><img
+                            src="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=600&q=80" />
                         <div class="event-title">Dance Off</div>
                     </a>
                     <a href="dramafest.html" class="event-card"><img src="dramafest.jpg" />
@@ -480,7 +516,6 @@
             </div>
         </div>
 
-        <!-- Food Stalls Section -->
         <div class="section">
             <h2>Food Stalls</h2>
             <div class="scroll-wrapper">
@@ -489,7 +524,8 @@
                     <a href="spiceroutes.html" class="event-card"><img src="spiceroute.jpg" />
                         <div class="event-title">Spice Route</div>
                     </a>
-                    <a href="burgerblast.html" class="event-card"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" />
+                    <a href="burgerblast.html" class="event-card"><img
+                            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" />
                         <div class="event-title">Burger Blast</div>
                     </a>
                     <a href="sweettooth.html" class="event-card"><img src="sweettooth.webp" />
@@ -521,19 +557,20 @@
             </div>
         </div>
 
-        <!-- Games Arena Section -->
         <div class="section">
             <h2>Games Arena</h2>
             <div class="scroll-wrapper">
                 <button class="scroll-btn left">◀</button>
                 <div class="carousel-container">
-                    <a href="lanparty.html" class="event-card"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" />
+                    <a href="lanparty.html" class="event-card"><img
+                            src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" />
                         <div class="event-title">LAN Party</div>
                     </a>
                     <a href="vrchallenge.html" class="event-card"><img src="vrchallenge.jpeg" />
                         <div class="event-title">VR Challenge</div>
                     </a>
-                    <a href="consoleclash.html" class="event-card"><img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=600&q=80" />
+                    <a href="consoleclash.html" class="event-card"><img
+                            src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=600&q=80" />
                         <div class="event-title">Console Clash</div>
                     </a>
                     <a href="mobilemadness.html" class="event-card"><img src="mobilemadness.jpg" />
@@ -563,7 +600,7 @@
         </div>
     </div>
 
-        <footer>
+    <footer>
         <div class="sponsor-section">
             <h3>Our Sponsors</h3>
             <div class="sponsor-list">
@@ -576,12 +613,11 @@
                 <div class="sponsor-item">
                     <img src="sponsor3.jpg" alt="Sponsor 3">
                 </div>
-                </div>
-                    <div class="sponsor-item">
-                        <img src="sponsor4.jpg" alt="Sponsor 4">
+                <div class="sponsor-item">
+                    <img src="sponsor4.jpg" alt="Sponsor 4">
                 </div>
             </div>
-        </div
+        </div>
         <div class="footer-links">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -626,12 +662,34 @@
             const btnLeft = wrapper.querySelector('.scroll-btn.left');
             const btnRight = wrapper.querySelector('.scroll-btn.right');
 
+            // Store the amount to scroll by for this specific carousel
+            let scrollAmount = 300; // Default scroll amount for larger screens
+
+            // Adjust scroll amount for smaller screens to match 2 cards
+            function adjustScrollAmount() {
+                if (window.innerWidth <= 768) {
+                    // Get the computed width of an event-card + its margin-right
+                    const cardStyle = window.getComputedStyle(container.querySelector('.event-card'));
+                    const cardWidth = parseFloat(cardStyle.width);
+                    const cardMarginRight = parseFloat(cardStyle.marginRight);
+                    scrollAmount = (cardWidth + cardMarginRight) * 2; // Scroll by 2 cards
+                } else {
+                    scrollAmount = 300; // Reset for larger screens
+                }
+            }
+
+            // Initial adjustment
+            adjustScrollAmount();
+            // Re-adjust on window resize
+            window.addEventListener('resize', adjustScrollAmount);
+
+
             btnLeft.addEventListener('click', () => {
-                container.scrollBy({ left: -300, behavior: 'smooth' });
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
             });
 
             btnRight.addEventListener('click', () => {
-                container.scrollBy({ left: 300, behavior: 'smooth' });
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             });
         });
 
@@ -667,10 +725,10 @@
         });
     </script>
     <script>
-  function toggleMenu() {
-    document.querySelector('.navbar').classList.toggle('active');
-  }
-</script>
+        function toggleMenu() {
+            document.querySelector('.navbar').classList.toggle('active');
+        }
+    </script>
 
 </body>
 

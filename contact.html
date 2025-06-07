@@ -89,7 +89,9 @@
     right: 25px;
     z-index: 1001;
   }
-
+    nav{
+        position: relative;
+    }
   .navbar {
     display: none;
     flex-direction: column;
@@ -596,6 +598,12 @@
     <script>
   function toggleMenu() {
     document.querySelector('.navbar').classList.toggle('active');
+document.querySelectorAll('.navbar a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.navbar').classList.remove('active');
+  });
+});
+
   }
 </script>
 

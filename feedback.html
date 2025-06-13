@@ -116,7 +116,6 @@
   }
 }
 
-
         .main-content {
             padding: 2rem;
             margin-top: 70px;
@@ -310,77 +309,6 @@
             color: var(--star-color);
             font-size: 1rem;
         }
-
-        footer {
-            background-color: var(--nav-bg);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
-            width: 100%;
-        }
-
-        .sponsor-section {
-            margin-bottom: 1.5rem;
-        }
-
-        .sponsor-section h3 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .sponsor-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            padding: 1rem;
-        }
-
-        .sponsor-item {
-            text-align: center;
-        }
-
-        .sponsor-item img {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .sponsor-item img:hover {
-            transform: scale(1.1);
-        }
-
-        .sponsor-item span {
-            display: block;
-            font-family: 'Brush Script MT', cursive;
-            font-size: 1.1rem;
-            color: var(--text-color);
-            margin-top: 0.5rem;
-        }
-
-        .footer-links {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .footer-copyright {
-            font-size: 0.8rem;
-            color: #aaa;
-        }
     </style>
 </head>
 <body>
@@ -396,7 +324,7 @@
         <li><a href="event.html">Events</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="feedback.html">Feedback</a></li>
-         <li id="auth-section"></li>
+        <li id="auth-section"></li>
       </ul>
     </nav>
   </header>
@@ -536,12 +464,11 @@
                 <div class="sponsor-item">
                     <img src="sponsor3.jpg" alt="Sponsor 3">
                 </div>
-                </div>
-                    <div class="sponsor-item">
-                        <img src="sponsor4.jpg" alt="Sponsor 4">
+                <div class="sponsor-item">
+                    <img src="sponsor4.jpg" alt="Sponsor 4">
                 </div>
             </div>
-        </div
+        </div>
         <div class="footer-links">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -642,12 +569,10 @@
                 }
             });
         });
-    </script>
-    <script>
-  function toggleMenu() {
-    document.querySelector('.navbar').classList.toggle('active');
-  }
-</script>
 
+        function toggleMenu() {
+            document.querySelector('.navbar').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

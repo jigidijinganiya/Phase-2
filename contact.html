@@ -404,6 +404,50 @@
             display: block;
         }
 
+        /* Team Section */
+        .team-section {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .team-section h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .team-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .team-member {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: 200px;
+        }
+
+        .team-member p {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .team-member a:hover {
+            color: #ff69b4;
+            text-decoration: underline;
+        }
+
         /* Responsive Hamburger Menu */
         @media (max-width: 768px) {
             .hamburger {
@@ -441,6 +485,16 @@
 
             .contact-section {
                 padding: 0 1rem;
+            }
+
+            .team-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .team-member {
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
@@ -538,6 +592,29 @@
             <div class="faq-item">
                 <div class="faq-question">How can I volunteer or sponsor Aarohan?</div>
                 <div class="faq-answer">For volunteering or sponsorship opportunities, please contact us at <a href="mailto:info@aarohanfest.com">info@aarohanfest.com</a> with your details and proposal.</div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="team-section">
+            <h3>Meet Our Team</h3>
+            <div class="team-list">
+                <div class="team-member">
+                    <p><strong>Nandini</strong></p>
+                    <p><a href="https://knandini01.github.io/Portfolio-html-css/" target="_blank">Portfolio</a></p>
+                </div>
+                <div class="team-member">
+                    <p><strong>Samshritha</strong></p>
+                    <p><a href="https://samshrithaaa07.github.io/portfolio/" target="_blank">Portfolio</a></p>
+                </div>
+                <div class="team-member">
+                    <p><strong>Hasini</strong></p>
+                    <p><a href="https://kumudahasini.github.io/_Portfolio/" target="_blank">Portfolio</a></p>
+                </div>
+                <div class="team-member">
+                    <p><strong>Vamsika</strong></p>
+                    <p><a href="https://vamsikagh.github.io/Portfolio/" target="_blank">Portfolio</a></p>
+                </div>
             </div>
         </div>
     </div>

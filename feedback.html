@@ -556,20 +556,6 @@
             }
         });
 
-        ratingInputs.forEach((input, index) => {
-            input.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowRight' && index < ratingInputs.length - 1) {
-                    ratingInputs[index + 1].focus();
-                    ratingInputs[index + 1].checked = true;
-                    ratingInputs[index + 1].dispatchEvent(new Event('change'));
-                } else if (e.key === 'ArrowLeft' && index > 0) {
-                    ratingInputs[index - 1].focus();
-                    ratingInputs[index - 1].checked = true;
-                    ratingInputs[index - 1].dispatchEvent(new Event('change'));
-                }
-            });
-        });
-
         function toggleMenu() {
             document.querySelector('.navbar').classList.toggle('active');
         }
